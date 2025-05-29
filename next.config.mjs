@@ -10,7 +10,25 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-  }
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+    return {
+      ...config,
+      externals: {
+        ...config.externals,
+        '@tauri-apps/api': 'window.__TAURI__',
+        '@tauri-apps/api/updater': 'window.__TAURI__.updater',
+      },
+    };
+  },
 };
 
 export default nextConfig;

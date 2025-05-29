@@ -636,15 +636,6 @@ export default function FCOMAdmin() {
             </Button>
           </div>
         </main>
-
-        {/* Print Footer */}
-        <footer className="hidden print:block fixed bottom-0 left-0 right-0 text-center py-2 border-t-2 border-black text-xs">
-          <div>F-COM D.O.O. | Bulevar Zorana Đinđića 12D, lokal 36, 11070 Novi Beograd</div>
-          <div>
-            Tel: +381 11 313 28 27, +381 62 871 93 84 | Email: office@f-com.co.rs | Žiro račun: 160-120801-65 (Banca
-            Intesa)
-          </div>
-        </footer>
       </div>
     )
   }
